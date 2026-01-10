@@ -23,7 +23,7 @@
             cursor: none;
         }
 
-        /* Hero Text Animation */
+        /* Animation de texte miroitant */
         .shimmer-text {
             background: linear-gradient(90deg, #333, #fff, #333);
             background-size: 200% auto;
@@ -38,7 +38,7 @@
             to { background-position: 200% center; }
         }
 
-        /* 3D Tilt Card Base */
+        /* Cartes à inclinaison 3D */
         .tilt-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -53,7 +53,7 @@
             background: rgba(255, 255, 255, 0.04);
         }
 
-        /* Custom Cursor */
+        /* Curseur personnalisé */
         #cursor-dot {
             width: 8px;
             height: 8px;
@@ -75,7 +75,7 @@
             transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
         }
 
-        /* Interactive Canvas Background */
+        /* Arrière-plan animé */
         #canvas-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -83,7 +83,7 @@
             opacity: 0.4;
         }
 
-        /* Profile & Social Overlay */
+        /* Profil Wrapper */
         .profile-wrapper {
             position: absolute;
             right: 5%;
@@ -169,7 +169,7 @@
 
         .nav-link:hover::after { width: 100%; }
 
-        /* Unified CTA Buttons */
+        /* Boutons CTA */
         .btn-cta {
             border-radius: 30px;
             padding: 1.5rem 2.5rem;
@@ -269,7 +269,7 @@
             </div>
         </section>
 
-        <!-- Interactive Skills Bento -->
+        <!-- Expertise Bento -->
         <section id="skills" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="tilt-card p-12 md:col-span-2 space-y-12">
                 <h2 class="text-4xl font-black italic">Expertise</h2>
@@ -312,7 +312,7 @@
             </div>
         </section>
 
-        <!-- Experience Timeline -->
+        <!-- Parcours Section -->
         <section id="work" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="tilt-card p-12 space-y-12">
                 <h2 class="text-4xl font-black italic">Formation</h2>
@@ -359,7 +359,7 @@
             </div>
         </section>
 
-        <!-- Final Footer -->
+        <!-- Pied de page final -->
         <footer class="text-center py-48 space-y-16">
             <div class="space-y-6">
                 <h2 class="text-6xl md:text-[8vw] font-black uppercase leading-[0.9] tracking-tighter">
@@ -374,7 +374,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 no-print">
+            <!-- Seul bouton restant ici -->
+            <div class="flex justify-center no-print">
                 <a href="cv.pdf" target="_blank" class="btn-cta btn-cta-secondary">
                     Télécharger CV <i data-lucide="download" size="18"></i>
                 </a>
@@ -392,7 +393,7 @@
                 </div>
                 <div class="pt-10 space-y-2">
                     <p class="text-[8px] font-bold text-zinc-800 uppercase tracking-[1.5em]">Walid Aatif — Portfolio 2026</p>
-                    <p class="text-[7px] font-bold text-zinc-900 uppercase tracking-[0.8em]">Built with Tailwind + Lucide + AI Precision</p>
+                    <p class="text-[7px] font-bold text-zinc-900 uppercase tracking-[0.8em]">Optimisé par IA et Précision</p>
                 </div>
             </div>
         </footer>
@@ -400,7 +401,7 @@
     </main>
 
     <script>
-        // --- PARTICLES ---
+        // --- PARTICULES ---
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -415,7 +416,7 @@
         function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
         init(); animate();
 
-        // --- CURSOR ---
+        // --- CURSEUR ---
         const dot = document.getElementById('cursor-dot');
         const outline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', (e) => {
@@ -423,7 +424,7 @@
             outline.animate({ left: `${e.clientX - 20}px`, top: `${e.clientY - 20}px` }, { duration: 500, fill: "forwards" });
         });
 
-        // --- 3D TILT ---
+        // --- INCLINAISON 3D ---
         const profile = document.querySelector('.profile-wrapper');
         if (profile) {
             profile.addEventListener('mousemove', (e) => {
